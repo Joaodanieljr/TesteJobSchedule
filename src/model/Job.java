@@ -1,19 +1,24 @@
 package model;
 
-public class Job {
+public class Job implements Comparable<Job> {
 	
 	        public int id;
 
 	        public String descricao;
 
-	        public long dataConclusao;
+	        public Long dataConclusao;
 
-	        public long tempoEstimado;
+	        public Long tempoEstimado;
 
 
+	        @Override
+			public int compareTo(Job j){
+				return getDataConclusao().compareTo(j.dataConclusao);
+			}
+	        
 	        public Job() {}
 	        
-	        public Job(int id, String descricao, long dataConclusao, long tempoEstimado) {
+	        public Job(int id, String descricao, Long dataConclusao, Long tempoEstimado) {
 				this.id = id;
 				this.descricao = descricao;
 				this.dataConclusao = dataConclusao;
@@ -37,19 +42,19 @@ public class Job {
 				this.descricao = descricao;
 			}
 
-			public long getDataConclusao() {
+			public Long getDataConclusao() {
 				return dataConclusao;
 			}
 
-			public void setDataConclusao(long dataConclusao) {
+			public void setDataConclusao(Long dataConclusao) {
 				this.dataConclusao = dataConclusao;
 			}
 
-			public long getTempoEstimado() {
+			public Long getTempoEstimado() {
 				return tempoEstimado;
 			}
 
-			public void setTempoEstimado(long tempoEstimado) {
+			public void setTempoEstimado(Long tempoEstimado) {
 				this.tempoEstimado = tempoEstimado;
 			}
 
