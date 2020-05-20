@@ -17,10 +17,15 @@ public class ScheduleJob {
     
         	
     	for(Job n: jobs) {
-    		if (n.dataConclusao <= 8L ){
+    		if (n.dataConclusao <= 8L 
+    			&& n.dataConclusao <= n.dataFinalJob 
+    			&& (n.dataInicialJob + n.tempoEstimado) <= n.dataFinalJob )
+    		{
+    			
     			schedule.add(n);
     		}
     	}
+    	
     	
     	for(Job n: schedule) {
     		

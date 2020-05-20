@@ -12,11 +12,11 @@ public class RepositoryJob {
 		
 		List<Job> listaJobs = new ArrayList<>();
 		
-		Job job1 = new Job ( 1,"Importação de arquivos de fundos", 9L,8L);
+		Job job1 = new Job ( 1,"Importação de arquivos de fundos", 9L,8L,5L,10L);
 
-	    Job job2 = new Job (2,"Importação de dados da Base Legada",5L,5L);
+	    Job job2 = new Job (2,"Importação de dados da Base Legada",5L,5L,5L,10L);
 
-	    Job job3 = new Job (3,"Importação de dados de integração",1L,1L );
+	    Job job3 = new Job (3,"Importação de dados de integração",1L,1L,5L,10L );
 	    
 	    listaJobs.add(job1);
 	    listaJobs.add(job2);

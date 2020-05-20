@@ -9,20 +9,30 @@ public class Job implements Comparable<Job> {
 	        public Long dataConclusao;
 
 	        public Long tempoEstimado;
+	        
+	        public Long dataInicialJob;
+	        
+	        public Long dataFinalJob;
 
 
-	        @Override
+	       
+
+			@Override
 			public int compareTo(Job j){
 				return getDataConclusao().compareTo(j.dataConclusao);
 			}
 	        
 	        public Job() {}
 	        
-	        public Job(int id, String descricao, Long dataConclusao, Long tempoEstimado) {
+	        public Job(int id, String descricao, Long dataConclusao, Long tempoEstimado,
+	        		Long dataInicialJob,Long dataFinalJob) {
 				this.id = id;
 				this.descricao = descricao;
 				this.dataConclusao = dataConclusao;
 				this.tempoEstimado = tempoEstimado;
+				this.dataInicialJob = dataInicialJob;
+				this.dataFinalJob = dataFinalJob;
+				
 				
 			}
 
@@ -58,5 +68,20 @@ public class Job implements Comparable<Job> {
 				this.tempoEstimado = tempoEstimado;
 			}
 
+			 public Long getdataInicialJob() {
+					return dataInicialJob;
+				}
+
+			public void setdataInicialJob(Long dataInicialJob) {
+				this.dataInicialJob = dataInicialJob;
+			}
+
+			public Long getdataFinalJob() {
+				return dataFinalJob;
+			}
+
+			public void setdataFinalJob(Long dataFinalJob) {
+				this.dataFinalJob = dataFinalJob;
+			}
       
 }
