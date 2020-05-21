@@ -9,12 +9,12 @@ import repository.RepositoryJob;
 
 public class ScheduleJob {
 
-	public List<Job> schedule() throws ParseException{
+	public ArrayList<Job> schedule() throws ParseException{
 		
 		RepositoryJob repository = new RepositoryJob();
 
 		List<Job> jobs = repository.getListaJobs();
-		List<Job> schedule = new ArrayList<>();
+		ArrayList<Job> schedule = new ArrayList<>();
     
         	
     	for(Job n: jobs) {
@@ -22,19 +22,13 @@ public class ScheduleJob {
     			&& n.dataConclusao <= n.dataFinalJob 
     			&& (n.dataInicialJob + n.tempoEstimado) <= n.dataFinalJob )
     		{
-    			
     			schedule.add(n);
-    			
     		}
     	}
-    	
-    	 	
-    	for(Job n: schedule) {
-    		
-    		System.out.println(n.getId());
-    	}
-    
-    
+        
     return schedule;
 	}
+	
+	
+	
 }
