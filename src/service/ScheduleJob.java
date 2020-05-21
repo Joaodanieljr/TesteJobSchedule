@@ -1,5 +1,6 @@
 package service;
 
+import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -8,7 +9,7 @@ import repository.RepositoryJob;
 
 public class ScheduleJob {
 
-	public List<Job> schedule(){
+	public List<Job> schedule() throws ParseException{
 		
 		RepositoryJob repository = new RepositoryJob();
 
@@ -17,22 +18,23 @@ public class ScheduleJob {
     
         	
     	for(Job n: jobs) {
-    		if (n.dataConclusao <= 8L 
+    		if (n.tempoEstimado <= 28800000L //8horas
     			&& n.dataConclusao <= n.dataFinalJob 
     			&& (n.dataInicialJob + n.tempoEstimado) <= n.dataFinalJob )
     		{
     			
     			schedule.add(n);
+    			
     		}
     	}
     	
-    	
+    	 	
     	for(Job n: schedule) {
     		
     		System.out.println(n.getId());
     	}
     
     
-    return jobs;
+    return schedule;
 	}
 }
