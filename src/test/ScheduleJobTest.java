@@ -50,7 +50,7 @@ public class ScheduleJobTest {
 		}
 		
 		
-		if(listaSchedule.equals(listaSchedule)){
+		if(listaSchedule.equals(listaIdeal)){
 			System.out.println("Sequencia Correta");
 		}else{
 			System.out.println("Sequencia Incorreta");
